@@ -1,0 +1,19 @@
+Name
+    Valori
+Hobbies
+    Robotics
+    Academics Superbowl
+    Guitar and Ukelele
+Favorites
+    Books
+        In The Time Of The Butterflies
+        A Wrinkle In Time
+        In Cold Blood
+    Colors
+        Pastel Colors
+        Monochromatic
+Career Goals
+    Chemical Engineer
+    Purdue University
+Family
+    1 Sister
