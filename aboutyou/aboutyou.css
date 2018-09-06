@@ -5,11 +5,29 @@ h1 {
     color:antiquewhite;
 }
 body {
-    background-color:#20397d;
+    background-image:radial-gradient(circle, #dde3fd, #dde3fd, #798ef6, #798ef6, #183bf0, #0a2299);
     color:#f3e5d2;
     font-family: 'Berkshire Swash', cursive;
     font-size:20px;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
 }
 footer p, h6 {
     font-family: 'Roboto', sans-serif;
+}
+header {
+    background-color:#556eb2;
+}
+section {
+    background-color:#546db2;
+}
+nav {
+    background-color:#3f5ba6;
+    color:rgb(224,231,226)
+}
+footer {
+    background-color:rgb(80,105,168)
+}
+img {
+    width:100%
 }
