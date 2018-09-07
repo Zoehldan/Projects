@@ -3,6 +3,7 @@ h1 {
     font-size:50px;
     font-family: 'Shadows Into Light', cursive;
     color:antiquewhite;
+    text-shadow:4px 3px 3px #303070;
 }
 body {
     background-image:radial-gradient(circle, #dde3fd, #dde3fd, #798ef6, #798ef6, #183bf0, #0a2299);
@@ -11,6 +12,8 @@ body {
     font-size:20px;
     background-repeat:no-repeat;
     background-attachment:fixed;
+    margin:15px;
+    text-shadow:1px 1px 2px #303070
 }
 footer p, h6 {
     font-family: 'Roboto', sans-serif;
@@ -29,5 +32,13 @@ footer {
     background-color:rgb(80,105,168)
 }
 img {
-    width:100%
+    width:100%;
+    height:100%
+}
+a {
+    color:rgb(175,175,255);
+    text-decoration:none
+}
+ol {
+    list-style-type:none
 }
