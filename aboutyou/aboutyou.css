@@ -4,6 +4,7 @@ h1 {
     font-family: 'Shadows Into Light', cursive;
     color:antiquewhite;
     text-shadow:4px 3px 3px #303070;
+    letter-spacing:0.1em
 }
 body {
     background-image:radial-gradient(circle, #dde3fd, #dde3fd, #798ef6, #798ef6, #183bf0, #0a2299);
@@ -14,7 +15,6 @@ body {
     background-attachment:fixed;
     margin:15px;
     text-shadow:1px 1px 2px #303070;
-    word-spacing:justify
 }
 footer p {
     font-family: 'Roboto', sans-serif;
@@ -41,4 +41,7 @@ a {
 }
 ul {
     list-style-type:none;
+}
+p {
+    letter-spacing:0.05em
 }
