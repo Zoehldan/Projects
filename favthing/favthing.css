@@ -20,7 +20,9 @@ li a {
     padding: 16px;
     text-decoration: none;
 }
-
+a.active {
+    background-color:#222222;
+}
 li a:hover {
     background-color: #111111;
 }
@@ -30,5 +32,6 @@ ul, li {
 }
 footer {
     position:fixed;
-    bottom:0px
+    bottom:0px;
+    text-align:center;
 }
