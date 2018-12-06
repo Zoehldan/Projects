@@ -1,5 +1,3 @@
-$("").ready(function(){
-    $("p").hover(function(){
-        
-    })
+$(document).ready(function(){
+    
 })
