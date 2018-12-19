@@ -39,8 +39,11 @@ nav ul li {
 }
 footer {
     width:100%;
-    font-size:0.75em;
+    font-size:0.5em;
     text-align:center;
-    position: absolute;
-    bottom: 0px;
+    position: relative;
+    bottom: -25px;
+}
+h6 {
+    font-size:1.375em
 }
