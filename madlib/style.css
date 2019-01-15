@@ -1,0 +1,18 @@
+body {
+    padding:15px;
+    text-align:center;
+}
+form, fieldset {
+    width:100%;
+}
+label {
+    display:block;
+    text-align:right;
+    position: relative;
+    right:35%;
+    padding:5px 0px 5px 0px
+}
+button {
+    display:block;
+    margin:auto;
+}
