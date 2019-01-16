@@ -1,9 +1,10 @@
 body {
-    padding:15px;
+    padding:5px 15px;
     text-align:center;
 }
 form, fieldset {
     width:100%;
+    margin-bottom: 10px
 }
 label {
     display:block;
@@ -15,4 +16,8 @@ label {
 button {
     display:block;
     margin:auto;
+}
+.hidden {
+    font-size:0.1em;
+    opacity:0
 }
