@@ -28,6 +28,7 @@ button {
 footer {
     position: static;
     bottom: 0px;
+    padding-top: 25px;
     margin:auto;
 }
 .hidden {
