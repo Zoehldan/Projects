@@ -1,5 +1,7 @@
 body {
     padding:5px 15px;
+    background-image:radial-gradient(circle, #dd9400 15%, #cccc00 30%, #dd0000 100%);
+    background-size:100% 170%;
     text-align:center;
 }
 form, fieldset {
@@ -13,8 +15,19 @@ label {
     right:35%;
     padding:5px 0px 5px 0px
 }
+input {
+    background-color: #ccc
+}
+input:hover, input:focus {
+    background-color:#eee
+}
 button {
     display:block;
+    margin:auto;
+}
+footer {
+    position: static;
+    bottom: 0px;
     margin:auto;
 }
 .hidden {
