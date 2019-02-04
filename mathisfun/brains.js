@@ -8,7 +8,7 @@ $(document).ready(function(){
     $("#bmi").click(function(){
         bmi();
     });
-    $("#gToHM").click(function(){
+    $("#hToHM").click(function(){
         hToHM();
     });
 });
@@ -22,9 +22,9 @@ var minToYD=function(){
 var gratotal=function(){
     var input1=$("#num2").val();
     var input2=$("#num3").val();
-    var grat=input1*(input2/100);
     input1=parseInt(input1);
-    grat=parseInt(grat);
+    input2=parseInt(input2);
+    var grat=input1*(input2/100);
     var total=input1+grat;
     $("#output2").text("Gratuity: $"+grat+", Total: $"+total);
 };
@@ -33,13 +33,14 @@ var bmi=function(){
     var input2=$("#num5").val();
     var kilo=input1*0.45359237;
     var mtrs=input2*0.0254;
-    var bmi=kilo/(mtrs^2);
+    var bmi=kilo/(Math.pow(mtrs, 2));
     $("#output3").text("BMI is "+bmi);
 };
 var hToHM=function(){
     var input=$("#num6").val();
     var mins=input*60;
-    var minsR=Math.round(mins%60);
+    var minsR=mins%60;
+    var minsRR=Math.round(minsR)
     var hrs=(mins-minsR)/60;
-    $("#output4").text(hrs+" hours, and "+minsR+" minutes");
+    $("#output4").text(hrs+" hours, and "+minsRR+" minutes");
 };
