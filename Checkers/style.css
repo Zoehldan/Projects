@@ -28,8 +28,9 @@ tr td {
 #scores {
     margin:25px auto 0px;
     width:25%;
-    max-width:250px;
+    min-width:150px;
+    max-width:200px;
 }
-#p2turn {
-    opacity:.5;
+#p1turn {
+    opacity:0.5;
 }
