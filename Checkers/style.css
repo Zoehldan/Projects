@@ -1,0 +1,35 @@
+#board {
+    margin:50px auto;
+    border:2px solid black;
+    border-collapse:collapse;
+    width:100%;
+    min-width:300px;
+    max-width:600px;
+    height:300px;
+    min-height:300px;
+    max-height:600px
+}
+tr td {
+    border:1px solid #555;
+    
+}
+.checkered {
+    background-color:#ddd
+}
+.red {
+    background-color:#b00
+}
+.black {
+    background-color:#333
+}
+#buttonBar {
+    text-align:center;
+}
+#scores {
+    margin:25px auto 0px;
+    width:25%;
+    max-width:250px;
+}
+#p2turn {
+    opacity:.5;
+}

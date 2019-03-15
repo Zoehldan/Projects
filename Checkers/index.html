@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+        <script src="brains.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title></title>
+    </head>
+    <body>
+        <table id="board">
+            <tr>
+                <td></td>
+                <td class="checkered black"></td>
+                <td></td>
+                <td class="checkered"></td>
+                <td></td>
+                <td class="checkered red"></td>
+                <td></td>
+                <td class="checkered red"></td>
+            </tr>
+            <tr>
+                <td class="checkered black"></td>
+                <td></td>
+                <td class="checkered black"></td>
+                <td></td>
+                <td class="checkered"></td>
+                <td></td>
+                <td class="checkered red"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="checkered black"></td>
+                <td></td>
+                <td class="checkered"></td>
+                <td></td>
+                <td class="checkered red"></td>
+                <td></td>
+                <td class="checkered red"></td>
+            </tr>
+            <tr>
+                <td class="checkered black"></td>
+                <td></td>
+                <td class="checkered black"></td>
+                <td></td>
+                <td class="checkered"></td>
+                <td></td>
+                <td class="checkered red"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="checkered black"></td>
+                <td></td>
+                <td class="checkered"></td>
+                <td></td>
+                <td class="checkered red"></td>
+                <td></td>
+                <td class="checkered red"></td>
+            </tr>
+            <tr>
+                <td class="checkered black"></td>
+                <td></td>
+                <td class="checkered black"></td>
+                <td></td>
+                <td class="checkered"></td>
+                <td></td>
+                <td class="checkered red"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="checkered black"></td>
+                <td></td>
+                <td class="checkered"></td>
+                <td></td>
+                <td class="checkered red"></td>
+                <td></td>
+                <td class="checkered red"></td>
+            </tr>
+            <tr>
+                <td class="checkered black"></td>
+                <td></td>
+                <td class="checkered black"></td>
+                <td></td>
+                <td class="checkered"></td>
+                <td></td>
+                <td class="checkered red"></td>
+                <td></td>
+            </tr>
+        </table>
+        <div id="output"></div>
+        <div id="buttonBar">
+            <button type="button">RESET</button>
+        </div>
+        <table id="scores">
+            <tr style="border:0px solid black">
+                <th style="text-align:left; border:0px solid black" id="p1turn">P1</th>
+                <th colspan="2" style="text-align:center; border:0px solid black">TOTAL</th>
+                <th style="text-align:right; border:0px solid black" id="p2turn">P2</th>
+            </tr>
+            <tr>
+                <td id="p1scoreNum" style="text-align:left; border:0px solid black">0</td>
+                <td id="totalNum" colspan="2" style="text-align:center; border:0px solid black">0</td>
+                <td id="p2scoreNum" style="text-align:right; border:0px solid black">0</td>
+            </tr>
+        </table>
+    </body>
+</html>
