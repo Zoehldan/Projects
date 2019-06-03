@@ -9,78 +9,91 @@
     </head>
     <body>
         <script type="text/javascript">
-        var config={
-            type:Phaser.AUTO,
-            width:800,
-            height:600,
-            physics:{
-                default:"arcade",
-                arcade:{
-                    gravity:{y:200},
-                    debug:false
+            var config={
+                type:Phaser.AUTO,
+                width:800,
+                height:600,
+                physics:{
+                    default:"arcade",
+                    arcade:{
+                        gravity:{y:50},
+                        debug:false
+                    }
+                },
+                scene:{
+                    preload:init,
+                    create:rendering,
+                    update:update
                 }
-            },
-            scene:{
-                preload:init,
-                create:rendering,
-                update:update
+            };
+            var basket;
+            var apples;
+            var cursors;
+            var score=0;
+            var lives=3;
+            var gameOver=false;
+            var timer
+            var rate=1000;
+            var scoreText;
+            var game=new Phaser.Game(config);
+            function init(){
+                this.load.image("sky", "sky.png");
+                this.load.image("basket", "basket.png");
+                this.load.image("apple", "apple.png");
             }
-        };
-        var basket;
-        var apples;
-        var cursors;
-        var score=0;
-        var gameOver=false;
-        var scoreText;
-        var game=new Phaser.Game(config);
-        function init(){
-            this.load.image("sky", "sky.png");
-            this.load.image("basket", "basket.png");
-            this.load.image("apple", "apple.png");
-
-        }
-        function rendering(){
-            this.add.image(400, 300, "sky");
-            apples=this.physics.add.staticGroup();
-            apples.create(Phaser.Math.Between(27, 773), 27, "apple").setScale(0.2)
-            basket.create(400, 500, "basket").setScale(0.3).refreshBody();
-            basket.setCollideWorldBounds(true);
-            apple.setCollideWorldBounds(true);
-            apple.setBounce(1);
-            cursors=this.input.keyboard.createCursorKeys();
-            scoreText=this.add.text(500, 25, "Score: 0", {fontSize:"25px", fill:"#000"});
-
-            this.physics.add.overlap(basket, apples, caught, null, this);
-        }
-        function update(){
-            if(gameOver){
-                return;
+            function rendering(){
+                this.add.image(400, 300, "sky");
+                apples=this.physics.add.group();
+                basket=this.physics.add.image(400, 500, "basket").setScale(0.3).setImmovable();
+                timer=this.time.addEvent({delay:rate, callback:spawnApple, callbackScope:this, loop:true});
+                timer=this.time.addEvent({delay:rate, callback:spawnApple, callbackScope:this, loop:true});
+                basket.setCollideWorldBounds(true);
+                cursors=this.input.keyboard.createCursorKeys();
+                scoreText=this.add.text(100, 15, "Score: 0", {fontSize:"25px", fill:"#000"});
+                lifeText=this.add.text(600, 15, "Lives: "+lives, {fontSize:"25px", fill:"#000"});
+                this.physics.add.overlap(basket, apples, caught, null, this);
+                if(apples.y>600){
+                    miss();
+                }
             }
-            if(cursors.left.isDown){
-                basket.setVelocityX(-100);
+            function update(){
+                if(gameOver){
+                    return;
+                }
+                basket.setVelocityY(0);
+                if(cursors.left.isDown){
+                    basket.setVelocityX(-350);
+                }
+                else if(cursors.right.isDown){
+                    basket.setVelocityX(350)
+                }
+                else if(cursors.left.isDown==false){
+                    basket.setVelocityX(0)
+                }
             }
-            else if(cursors.right.isDown){
-                basket.setVelocityX(100)
+            function spawnApple(){
+                apples.create(Phaser.Math.Between(27, 773), 75, "apple").setScale(0.2).setVelocityX(Phaser.Math.Between(-50, 50));
+                //apples.setCollideWorldBounds(true, true, true, false);
+                //apple.setBounce(1);
             }
-            else{
-                basket.setVelocityX(0)
+            function caught(basket, apple){
+                apple.disableBody(true, true);
+                caught++;
+                score+=10;
+                scoreText.setText("Score: "+score)
+                rate=rate-10;
+                //timer=this.time.addEvent({delay:rate, callback:spawnApple, callbackScope:this, loop:true});
             }
-        }
-        function caught(){
-            apple.disableBody(true, true);
-            caught++;
-            score+=10;
-            scoreText.setText("Score: "+score)
-        }
-        function miss(){
-            missed++;
-            if(missed>=3){
-                this.physics.pause();
-                apples.setTint(0xff0000);
-                baskets.setTint(0xff0000);
-                gameOver=true;
+            function miss(basket, apple){
+                missed++;
+                $("#lifeText").setText("Lives: "+lives);
+                if(missed>=3){
+                    this.physics.pause();
+                    apples.setTint(0xff0000);
+                    basket.setTint(0xff0000);
+                    gameOver=true;
+                }
             }
-        }
         </script>
     </body>
 </html>
